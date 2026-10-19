@@ -5,10 +5,7 @@ const config = require("./config")
 const app = express()
 
 app.use(express.json())
-app.use(cors({origin:process.env.NODE_ENV==="development"
-    ? process.env.LOCAL_URL
-    : process.env.LIVE_URL
-}))
+app.use(cors({origin:config.CORS_ORIGIN}))
 
 app.use("/api/auth", require("./routes/auth.routes"))
 

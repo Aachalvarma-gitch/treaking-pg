@@ -5,7 +5,10 @@ const config = require("./config")
 const app = express()
 
 app.use(express.json())
-app.use(cors({  origin: process.env.NODE_ENV === "production" ? process.env.LIVE_URL    : process.env.LOCAL_URL,  credentials: true }));
+app.use(cors({origin:process.env.NODE_ENV==="development"
+    ? process.env.LOCAL_URL
+    : process.env.LIVE_URL
+}))
 
 app.use("/api/auth", require("./routes/auth.routes"))
 

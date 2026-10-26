@@ -8,6 +8,8 @@ const config = {
     ENV: process.env.NODE_ENV === 'development'
         ? 'development'
         : 'production',
+    EMAIL:process.env.EMAIL,
+    EMAIL_PASSWORD:process.env.EMAIL_PASS,
 }
 
 module.exports = config
